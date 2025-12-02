@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Quản lý Bài thi - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="../../assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li>
+                  <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li>
+                    <li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li>
+                    <li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li>
+                    <li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li>
+                    <li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li>
+                    <li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li>
+                  </ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="exams.html" class="active"><i class="far fa-circle"></i>Danh sách bài thi</a></li>
+                    <li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li>
+                    <li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li>
+                    <li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li>
+                    <li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li>
+                    <li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li>
+                    <li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li>
+                    <li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li>
+                    <li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li>
+                    <li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li>
+                    <li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li>
+                    <li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li>
+                    <li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Quản lý Bài thi</h5>
+                    </div>
+                      <div class="header-search">
+                        <form>
+                          <input class="form-control" type="text" placeholder="Tìm kiếm..." aria-label="Search">
+                          <a href="#" class="close-search"><i data-feather="x"></i></a>
+                        </form>
+                      </div>
+                      <div class="flex-fill" id="headerNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item d-md-block d-lg-none">
+                            <a class="nav-link" href="#" id="toggle-search"><i data-feather="search"></i></a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                            <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Cài đặt</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats Cards -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">85</h5>
+                          <p class="stats-text">Tổng bài thi</p>
+                        </div>
+                        <div class="stats-icon change-primary">
+                          <i class="material-icons">assignment</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">23</h5>
+                          <p class="stats-text">Đang mở</p>
+                        </div>
+                        <div class="stats-icon change-success">
+                          <i class="material-icons">lock_open</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">1,256</h5>
+                          <p class="stats-text">Lượt thi hôm nay</p>
+                        </div>
+                        <div class="stats-icon change-info">
+                          <i class="material-icons">people</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">7.8</h5>
+                          <p class="stats-text">Điểm TB</p>
+                        </div>
+                        <div class="stats-icon change-warning">
+                          <i class="material-icons">grade</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Exams Table -->
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card">
+                      <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Danh sách Bài thi</h5>
+                        <a href="add-exam.html" class="btn btn-primary">
+                          <i class="fas fa-plus"></i> Tạo bài thi mới
+                        </a>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table id="examsTable" class="table table-striped" style="width:100%">
+                            <thead>
+                              <tr>
+                                <th>ID</th>
+                                <th>Tên bài thi</th>
+                                <th>Môn học</th>
+                                <th>Thời gian</th>
+                                <th>Số câu hỏi</th>
+                                <th>Lượt thi</th>
+                                <th>Điểm TB</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>EX001</td>
+                                <td>Kiểm tra Toán HK1</td>
+                                <td><span class="badge bg-primary">Toán học</span></td>
+                                <td>60 phút</td>
+                                <td>40</td>
+                                <td>256</td>
+                                <td><span class="badge bg-success">8.5</span></td>
+                                <td><span class="badge bg-success">Đang mở</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX002</td>
+                                <td>Thi Tiếng Anh B1</td>
+                                <td><span class="badge bg-info">Tiếng Anh</span></td>
+                                <td>90 phút</td>
+                                <td>80</td>
+                                <td>189</td>
+                                <td><span class="badge bg-success">7.9</span></td>
+                                <td><span class="badge bg-success">Đang mở</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX003</td>
+                                <td>Quiz Vật lý - Điện học</td>
+                                <td><span class="badge bg-secondary">Vật lý</span></td>
+                                <td>30 phút</td>
+                                <td>20</td>
+                                <td>145</td>
+                                <td><span class="badge bg-warning text-dark">6.8</span></td>
+                                <td><span class="badge bg-warning text-dark">Đang chấm</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX004</td>
+                                <td>Thi Lập trình C++ Cơ bản</td>
+                                <td><span class="badge bg-dark">Lập trình</span></td>
+                                <td>120 phút</td>
+                                <td>50</td>
+                                <td>312</td>
+                                <td><span class="badge bg-success">8.2</span></td>
+                                <td><span class="badge bg-secondary">Đã kết thúc</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX005</td>
+                                <td>Kiểm tra Hóa học Hữu cơ</td>
+                                <td><span class="badge bg-success">Hóa học</span></td>
+                                <td>45 phút</td>
+                                <td>30</td>
+                                <td>98</td>
+                                <td><span class="badge bg-success">7.5</span></td>
+                                <td><span class="badge bg-secondary">Đã kết thúc</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX006</td>
+                                <td>Thi thử THPT Quốc Gia - Toán</td>
+                                <td><span class="badge bg-primary">Toán học</span></td>
+                                <td>90 phút</td>
+                                <td>50</td>
+                                <td>523</td>
+                                <td><span class="badge bg-warning text-dark">6.5</span></td>
+                                <td><span class="badge bg-success">Đang mở</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX007</td>
+                                <td>Quiz JavaScript Nâng cao</td>
+                                <td><span class="badge bg-dark">Lập trình</span></td>
+                                <td>45 phút</td>
+                                <td>25</td>
+                                <td>178</td>
+                                <td><span class="badge bg-success">7.8</span></td>
+                                <td><span class="badge bg-danger">Đã khóa</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>EX008</td>
+                                <td>Kiểm tra Ngữ văn 12</td>
+                                <td><span class="badge bg-danger">Ngữ văn</span></td>
+                                <td>120 phút</td>
+                                <td>5</td>
+                                <td>234</td>
+                                <td><span class="badge bg-success">7.2</span></td>
+                                <td><span class="badge bg-info">Sắp mở</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-info" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-warning" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-secondary" title="Kết quả"><i class="fas fa-chart-bar"></i></button>
+                                  <button class="btn btn-sm btn-danger" title="Xóa"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Stats Row -->
+                <div class="row mt-4">
+                  <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Bài thi phổ biến</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                          <div>
+                            <h6 class="mb-1">Thi thử THPT Quốc Gia - Toán</h6>
+                            <small class="text-muted">523 lượt thi</small>
+                          </div>
+                          <span class="badge bg-primary">Toán học</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                          <div>
+                            <h6 class="mb-1">Lập trình C++ Cơ bản</h6>
+                            <small class="text-muted">312 lượt thi</small>
+                          </div>
+                          <span class="badge bg-dark">Lập trình</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                          <div>
+                            <h6 class="mb-1">Kiểm tra Toán HK1</h6>
+                            <small class="text-muted">256 lượt thi</small>
+                          </div>
+                          <span class="badge bg-primary">Toán học</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div>
+                            <h6 class="mb-1">Kiểm tra Ngữ văn 12</h6>
+                            <small class="text-muted">234 lượt thi</small>
+                          </div>
+                          <span class="badge bg-danger">Ngữ văn</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Thống kê theo môn học</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="mb-3">
+                          <div class="d-flex justify-content-between mb-1">
+                            <span>Toán học</span>
+                            <span>35%</span>
+                          </div>
+                          <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-primary" style="width: 35%"></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="d-flex justify-content-between mb-1">
+                            <span>Tiếng Anh</span>
+                            <span>25%</span>
+                          </div>
+                          <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-info" style="width: 25%"></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="d-flex justify-content-between mb-1">
+                            <span>Lập trình</span>
+                            <span>20%</span>
+                          </div>
+                          <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-dark" style="width: 20%"></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="d-flex justify-content-between mb-1">
+                            <span>Vật lý</span>
+                            <span>12%</span>
+                          </div>
+                          <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-secondary" style="width: 12%"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="d-flex justify-content-between mb-1">
+                            <span>Khác</span>
+                            <span>8%</span>
+                          </div>
+                          <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-warning" style="width: 8%"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/plugins/DataTables/datatables.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('#examsTable').DataTable({
+              language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Vietnamese.json'
+              }
+            });
+          });
+        </script>
+    </body>
+</html>
