@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Lịch họp - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="../../assets/plugins/fullcalendar/main.min.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li><a href="index.html"><i data-feather="home"></i>Dashboard</a></li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li><li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li><li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li><li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li><li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li><li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li><li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li><li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li><li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li><li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li><li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li></ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li><li><a href="schedule-meeting.html" class="active"><i class="far fa-circle"></i>Lịch họp</a></li><li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li><li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li><li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li><li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li><li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li><li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li></ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Lịch họp</h5>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                          <div class="dropdown-menu dropdown-menu-end profile-drop-menu">
+                            <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                            <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">8</h5><p class="stats-text">Hôm nay</p></div>
+                        <div class="stats-icon change-primary"><i class="material-icons">today</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">25</h5><p class="stats-text">Tuần này</p></div>
+                        <div class="stats-icon change-info"><i class="material-icons">date_range</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">87</h5><p class="stats-text">Tháng này</p></div>
+                        <div class="stats-icon change-success"><i class="material-icons">event</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">156</h5><p class="stats-text">Tổng số</p></div>
+                        <div class="stats-icon change-warning"><i class="material-icons">event_available</i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                          <h5 class="mb-0"><i class="fas fa-calendar-alt text-primary me-2"></i>Lịch họp trực tuyến</h5>
+                          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scheduleMeetingModal">
+                            <i class="fas fa-plus me-2"></i>Tạo lịch họp mới
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Calendar -->
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <div class="card-body">
+                        <div id="calendar"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Upcoming Meetings -->
+                  <div class="col-lg-4">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Cuộc họp sắp tới</h5>
+                      </div>
+                      <div class="card-body">
+                        <!-- Meeting 1 -->
+                        <div class="border rounded p-3 mb-3" style="border-left: 4px solid #001BB7 !important;">
+                          <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="mb-0">Lớp học Toán cao cấp</h6>
+                            <span class="badge bg-primary">Hôm nay</span>
+                          </div>
+                          <p class="text-muted small mb-2">
+                            <i class="fas fa-clock me-1"></i> 16:00 - 17:30<br>
+                            <i class="fas fa-user-tie me-1"></i> GV. Nguyễn Văn A<br>
+                            <i class="fas fa-users me-1"></i> 25 học sinh
+                          </p>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-primary flex-fill"><i class="fas fa-video me-1"></i>Vào phòng</button>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editMeetingModal"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                          </div>
+                        </div>
+
+                        <!-- Meeting 2 -->
+                        <div class="border rounded p-3 mb-3" style="border-left: 4px solid #0046FF !important;">
+                          <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="mb-0">Ôn tập IELTS Speaking</h6>
+                            <span class="badge bg-info">Hôm nay</span>
+                          </div>
+                          <p class="text-muted small mb-2">
+                            <i class="fas fa-clock me-1"></i> 18:00 - 19:00<br>
+                            <i class="fas fa-user-tie me-1"></i> GV. Trần Thị B<br>
+                            <i class="fas fa-users me-1"></i> 12 học sinh
+                          </p>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-primary flex-fill"><i class="fas fa-video me-1"></i>Vào phòng</button>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editMeetingModal"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                          </div>
+                        </div>
+
+                        <!-- Meeting 3 -->
+                        <div class="border rounded p-3 mb-3" style="border-left: 4px solid #FF8040 !important;">
+                          <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="mb-0">Thảo luận dự án Python</h6>
+                            <span class="badge" style="background-color: #FF8040;">Ngày mai</span>
+                          </div>
+                          <p class="text-muted small mb-2">
+                            <i class="fas fa-clock me-1"></i> 09:00 - 10:30<br>
+                            <i class="fas fa-user-tie me-1"></i> GV. Lê Văn C<br>
+                            <i class="fas fa-users me-1"></i> 8 học sinh
+                          </p>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-primary flex-fill"><i class="fas fa-info-circle me-1"></i>Chi tiết</button>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editMeetingModal"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                          </div>
+                        </div>
+
+                        <!-- Meeting 4 -->
+                        <div class="border rounded p-3" style="border-left: 4px solid #28a745 !important;">
+                          <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="mb-0">Họp phụ huynh lớp 12A1</h6>
+                            <span class="badge bg-success">20/01</span>
+                          </div>
+                          <p class="text-muted small mb-2">
+                            <i class="fas fa-clock me-1"></i> 19:00 - 20:30<br>
+                            <i class="fas fa-user-tie me-1"></i> GV. Phạm Văn D<br>
+                            <i class="fas fa-users me-1"></i> 35 phụ huynh
+                          </p>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-primary flex-fill"><i class="fas fa-info-circle me-1"></i>Chi tiết</button>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editMeetingModal"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                          </div>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                          <a href="meeting-history.html" class="text-primary">Xem tất cả lịch họp →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Schedule Meeting Modal -->
+        <div class="modal fade" id="scheduleMeetingModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tạo lịch họp mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <label class="form-label">Tên cuộc họp <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" placeholder="VD: Lớp học Toán cao cấp - Buổi 6" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Ngày họp <span class="text-danger">*</span></label>
+                      <input type="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label class="form-label">Thời gian bắt đầu</label>
+                      <input type="time" class="form-control" value="14:00">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label class="form-label">Thời gian kết thúc</label>
+                      <input type="time" class="form-control" value="15:30">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Giảng viên chủ trì</label>
+                      <select class="form-select">
+                        <option>Nguyễn Văn A</option>
+                        <option>Trần Thị B</option>
+                        <option>Lê Văn C</option>
+                        <option>Phạm Văn D</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Lớp/Nhóm</label>
+                      <select class="form-select">
+                        <option>Lớp 12A1</option>
+                        <option>Lớp 11B2</option>
+                        <option>Nhóm IELTS 1</option>
+                        <option>Nhóm Python Project</option>
+                      </select>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <label class="form-label">Mô tả cuộc họp</label>
+                      <textarea class="form-control" rows="3" placeholder="Nội dung buổi học, chủ đề thảo luận..."></textarea>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <label class="form-label">Người tham gia</label>
+                      <input type="text" class="form-control" placeholder="Nhập email hoặc tên người tham gia, cách nhau bằng dấu phẩy">
+                      <small class="text-muted">Hoặc có thể gửi link cho tất cả học sinh trong lớp</small>
+                    </div>
+                    <div class="col-md-12">
+                      <h6 class="mb-3">Cài đặt cuộc họp</h6>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="enableWaitingRoom2" checked>
+                        <label class="form-check-label" for="enableWaitingRoom2">Bật phòng chờ</label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="enableRecording2" checked>
+                        <label class="form-check-label" for="enableRecording2">Tự động ghi lại cuộc họp</label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="muteParticipants2" checked>
+                        <label class="form-check-label" for="muteParticipants2">Tắt mic người tham gia khi vào</label>
+                      </div>
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="sendReminder">
+                        <label class="form-check-label" for="sendReminder">Gửi email nhắc nhở trước 30 phút</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="repeatMeeting">
+                        <label class="form-check-label" for="repeatMeeting">Lặp lại cuộc họp (hàng tuần)</label>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary"><i class="fas fa-calendar-check me-2"></i>Tạo lịch họp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Meeting Modal -->
+        <div class="modal fade" id="editMeetingModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Chỉnh sửa lịch họp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <label class="form-label">Tên cuộc họp</label>
+                      <input type="text" class="form-control" value="Lớp học Toán cao cấp">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Ngày họp</label>
+                      <input type="date" class="form-control" value="2025-01-15">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label class="form-label">Bắt đầu</label>
+                      <input type="time" class="form-control" value="16:00">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label class="form-label">Kết thúc</label>
+                      <input type="time" class="form-control" value="17:30">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <label class="form-label">Mô tả</label>
+                      <textarea class="form-control" rows="3">Buổi học về phương trình vi phân</textarea>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger me-auto"><i class="fas fa-trash me-2"></i>Xóa lịch họp</button>
+                <button type="button" class="btn btn-primary"><i class="fas fa-save me-2"></i>Lưu thay đổi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/plugins/fullcalendar/main.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+              initialView: 'dayGridMonth',
+              headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+              },
+              locale: 'vi',
+              events: [
+                {
+                  title: 'Lớp học Toán cao cấp',
+                  start: '2025-01-15T16:00:00',
+                  end: '2025-01-15T17:30:00',
+                  color: '#001BB7'
+                },
+                {
+                  title: 'Ôn tập IELTS Speaking',
+                  start: '2025-01-15T18:00:00',
+                  end: '2025-01-15T19:00:00',
+                  color: '#0046FF'
+                },
+                {
+                  title: 'Thảo luận dự án Python',
+                  start: '2025-01-16T09:00:00',
+                  end: '2025-01-16T10:30:00',
+                  color: '#FF8040'
+                },
+                {
+                  title: 'Họp phụ huynh lớp 12A1',
+                  start: '2025-01-20T19:00:00',
+                  end: '2025-01-20T20:30:00',
+                  color: '#28a745'
+                },
+                {
+                  title: 'Lớp học Vật lý',
+                  start: '2025-01-17T14:00:00',
+                  color: '#001BB7'
+                },
+                {
+                  title: 'Lớp học Hóa',
+                  start: '2025-01-18T10:00:00',
+                  color: '#0046FF'
+                }
+              ],
+              eventClick: function(info) {
+                $('#editMeetingModal').modal('show');
+              }
+            });
+            calendar.render();
+          });
+        </script>
+    </body>
+</html>
