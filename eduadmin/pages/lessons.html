@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Quản lý Bài học - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="../../assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li>
+                  <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li>
+                    <li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li>
+                    <li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li>
+                  </ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li>
+                    <li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li>
+                    <li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li>
+                    <li><a href="lessons.html" class="active"><i class="far fa-circle"></i>Bài học</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li>
+                    <li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li>
+                    <li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li>
+                    <li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li>
+                    <li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li>
+                    <li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li>
+                    <li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li>
+                    <li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li>
+                    <li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li>
+                    <li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li>
+                    <li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li>
+                    <li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li>
+                    <li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Quản lý Bài học</h5>
+                    </div>
+                      <div class="header-search">
+                        <form>
+                          <input class="form-control" type="text" placeholder="Tìm kiếm..." aria-label="Search">
+                          <a href="#" class="close-search"><i data-feather="x"></i></a>
+                        </form>
+                      </div>
+                      <div class="flex-fill" id="headerNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                            <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Cài đặt</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats Cards -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">248</h5>
+                          <p class="stats-text">Tổng bài học</p>
+                        </div>
+                        <div class="stats-icon change-primary">
+                          <i class="material-icons">play_lesson</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">156</h5>
+                          <p class="stats-text">Video</p>
+                        </div>
+                        <div class="stats-icon change-success">
+                          <i class="material-icons">videocam</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">72</h5>
+                          <p class="stats-text">Tài liệu</p>
+                        </div>
+                        <div class="stats-icon change-info">
+                          <i class="material-icons">description</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">20</h5>
+                          <p class="stats-text">Quiz</p>
+                        </div>
+                        <div class="stats-icon change-warning">
+                          <i class="material-icons">quiz</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="row mb-3">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row g-3 align-items-center">
+                          <div class="col-md-3">
+                            <select class="form-select">
+                              <option value="">Tất cả khóa học</option>
+                              <option value="1">Lập trình Python cơ bản</option>
+                              <option value="2">IELTS Writing Band 7+</option>
+                              <option value="3">Toán cao cấp</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <select class="form-select">
+                              <option value="">Loại bài học</option>
+                              <option value="video">Video</option>
+                              <option value="document">Tài liệu</option>
+                              <option value="quiz">Quiz</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <select class="form-select">
+                              <option value="">Trạng thái</option>
+                              <option value="published">Đã xuất bản</option>
+                              <option value="draft">Bản nháp</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Tìm kiếm bài học...">
+                          </div>
+                          <div class="col-md-2">
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addLessonModal">
+                              <i class="fas fa-plus"></i> Thêm bài học
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Lessons Table -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover" id="lessonsTable">
+                            <thead>
+                              <tr>
+                                <th><input type="checkbox"></th>
+                                <th>Bài học</th>
+                                <th>Khóa học</th>
+                                <th>Loại</th>
+                                <th>Thời lượng</th>
+                                <th>Lượt xem</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #001BB7; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-play text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Giới thiệu Python</strong>
+                                      <small class="text-muted d-block">Chương 1 - Bài 1</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-primary">Lập trình Python</span></td>
+                                <td><span class="badge bg-success">Video</span></td>
+                                <td>15:30</td>
+                                <td>1,245</td>
+                                <td><span class="badge bg-success">Đã xuất bản</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #0046FF; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-play text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Biến và kiểu dữ liệu</strong>
+                                      <small class="text-muted d-block">Chương 1 - Bài 2</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-primary">Lập trình Python</span></td>
+                                <td><span class="badge bg-success">Video</span></td>
+                                <td>20:15</td>
+                                <td>987</td>
+                                <td><span class="badge bg-success">Đã xuất bản</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #17a2b8; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-file-pdf text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Tài liệu tham khảo Python</strong>
+                                      <small class="text-muted d-block">Chương 1</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-primary">Lập trình Python</span></td>
+                                <td><span class="badge bg-info">Tài liệu</span></td>
+                                <td>-</td>
+                                <td>456</td>
+                                <td><span class="badge bg-success">Đã xuất bản</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #FF8040; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-question-circle text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Bài kiểm tra chương 1</strong>
+                                      <small class="text-muted d-block">Chương 1</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-primary">Lập trình Python</span></td>
+                                <td><span class="badge bg-warning text-dark">Quiz</span></td>
+                                <td>10 câu</td>
+                                <td>324</td>
+                                <td><span class="badge bg-success">Đã xuất bản</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #28a745; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-play text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Task 1 Writing Overview</strong>
+                                      <small class="text-muted d-block">Chương 1 - Bài 1</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-success">IELTS Writing</span></td>
+                                <td><span class="badge bg-success">Video</span></td>
+                                <td>25:00</td>
+                                <td>856</td>
+                                <td><span class="badge bg-success">Đã xuất bản</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #6c757d; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-play text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Cấu trúc điều kiện if-else</strong>
+                                      <small class="text-muted d-block">Chương 2 - Bài 1</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-primary">Lập trình Python</span></td>
+                                <td><span class="badge bg-success">Video</span></td>
+                                <td>18:45</td>
+                                <td>-</td>
+                                <td><span class="badge bg-secondary">Bản nháp</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <div class="me-2 text-center" style="width: 40px; height: 40px; background: #dc3545; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-play text-white"></i>
+                                    </div>
+                                    <div>
+                                      <strong>Giới hạn hàm số</strong>
+                                      <small class="text-muted d-block">Chương 1 - Bài 1</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><span class="badge bg-danger">Toán cao cấp</span></td>
+                                <td><span class="badge bg-success">Video</span></td>
+                                <td>30:00</td>
+                                <td>567</td>
+                                <td><span class="badge bg-success">Đã xuất bản</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Add Lesson Modal -->
+        <div class="modal fade" id="addLessonModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Thêm Bài học mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-8 mb-3">
+                    <label class="form-label">Tên bài học</label>
+                    <input type="text" class="form-control" placeholder="Nhập tên bài học">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label">Loại bài học</label>
+                    <select class="form-select">
+                      <option value="video">Video</option>
+                      <option value="document">Tài liệu</option>
+                      <option value="quiz">Quiz</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Khóa học</label>
+                    <select class="form-select">
+                      <option value="">Chọn khóa học</option>
+                      <option value="1">Lập trình Python cơ bản</option>
+                      <option value="2">IELTS Writing Band 7+</option>
+                      <option value="3">Toán cao cấp</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Chương</label>
+                    <select class="form-select">
+                      <option value="">Chọn chương</option>
+                      <option value="1">Chương 1: Giới thiệu</option>
+                      <option value="2">Chương 2: Kiến thức nền tảng</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Mô tả</label>
+                  <textarea class="form-control" rows="3" placeholder="Mô tả bài học"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Nội dung (Video URL / File)</label>
+                  <input type="text" class="form-control" placeholder="https://youtube.com/watch?v=... hoặc tải file lên">
+                </div>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label">Thời lượng</label>
+                    <input type="text" class="form-control" placeholder="VD: 15:30">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label">Thứ tự</label>
+                    <input type="number" class="form-control" value="1">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label">Trạng thái</label>
+                    <select class="form-select">
+                      <option value="draft">Bản nháp</option>
+                      <option value="published">Xuất bản</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="previewLesson">
+                  <label class="form-check-label" for="previewLesson">Cho phép xem trước (miễn phí)</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Thêm bài học</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/plugins/DataTables/datatables.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('#lessonsTable').DataTable({
+              "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Vietnamese.json"
+              }
+            });
+          });
+        </script>
+    </body>
+</html>

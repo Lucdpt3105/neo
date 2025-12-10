@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Lịch sử họp - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="../../assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li><a href="index.html"><i data-feather="home"></i>Dashboard</a></li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li><li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li><li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li><li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li><li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li><li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li><li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li><li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li><li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li><li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li><li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li></ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li><li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li><li><a href="meeting-history.html" class="active"><i class="far fa-circle"></i>Lịch sử họp</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li><li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li><li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li><li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li><li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li><li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li></ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Lịch sử họp</h5>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                          <div class="dropdown-menu dropdown-menu-end profile-drop-menu">
+                            <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                            <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">156</h5><p class="stats-text">Tổng cuộc họp</p></div>
+                        <div class="stats-icon change-primary"><i class="material-icons">videocam</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">2,450</h5><p class="stats-text">Tổng thời gian (phút)</p></div>
+                        <div class="stats-icon change-info"><i class="material-icons">schedule</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">1,234</h5><p class="stats-text">Tổng người tham gia</p></div>
+                        <div class="stats-icon change-success"><i class="material-icons">groups</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">89</h5><p class="stats-text">Có bản ghi</p></div>
+                        <div class="stats-icon change-warning"><i class="material-icons">fiber_manual_record</i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Filter -->
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row align-items-end">
+                          <div class="col-md-3">
+                            <label class="form-label">Giảng viên</label>
+                            <select class="form-select">
+                              <option value="">Tất cả</option>
+                              <option>Nguyễn Văn A</option>
+                              <option>Trần Thị B</option>
+                              <option>Lê Văn C</option>
+                              <option>Phạm Văn D</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <label class="form-label">Môn học</label>
+                            <select class="form-select">
+                              <option value="">Tất cả</option>
+                              <option>Toán</option>
+                              <option>Vật lý</option>
+                              <option>Hóa học</option>
+                              <option>Tiếng Anh</option>
+                              <option>Lập trình</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <label class="form-label">Từ ngày</label>
+                            <input type="date" class="form-control">
+                          </div>
+                          <div class="col-md-2">
+                            <label class="form-label">Đến ngày</label>
+                            <input type="date" class="form-control">
+                          </div>
+                          <div class="col-md-2">
+                            <button class="btn btn-primary w-100"><i class="fas fa-search me-2"></i>Tìm kiếm</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Meeting History Table -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Lịch sử cuộc họp</h5>
+                        <div>
+                          <button class="btn btn-sm btn-outline-primary me-2"><i class="fas fa-download me-2"></i>Xuất Excel</button>
+                          <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-print me-2"></i>In báo cáo</button>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover" id="meetingHistoryTable">
+                            <thead>
+                              <tr>
+                                <th width="25%">Tên cuộc họp</th>
+                                <th width="12%">Giảng viên</th>
+                                <th width="12%">Ngày họp</th>
+                                <th width="10%">Thời gian</th>
+                                <th width="8%">Thời lượng</th>
+                                <th width="8%">Tham gia</th>
+                                <th width="10%">Trạng thái</th>
+                                <th width="15%">Thao tác</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><strong>Lớp học Toán cao cấp - Buổi 4</strong></td>
+                                <td>Nguyễn Văn A</td>
+                                <td>14/01/2025</td>
+                                <td>14:00</td>
+                                <td>90 phút</td>
+                                <td>25/30</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Ôn tập IELTS Speaking</strong></td>
+                                <td>Trần Thị B</td>
+                                <td>13/01/2025</td>
+                                <td>13:30</td>
+                                <td>45 phút</td>
+                                <td>12/15</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Thảo luận nhóm - Dự án Python</strong></td>
+                                <td>Lê Văn C</td>
+                                <td>12/01/2025</td>
+                                <td>14:30</td>
+                                <td>120 phút</td>
+                                <td>8/10</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Lớp học Vật lý - Buổi 3</strong></td>
+                                <td>Phạm Văn D</td>
+                                <td>11/01/2025</td>
+                                <td>16:00</td>
+                                <td>60 phút</td>
+                                <td>20/25</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Hướng dẫn làm bài tập Hóa</strong></td>
+                                <td>Hoàng Thị E</td>
+                                <td>10/01/2025</td>
+                                <td>09:00</td>
+                                <td>75 phút</td>
+                                <td>18/20</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Không có bản ghi" disabled><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Ôn thi Đại học - Môn Toán</strong></td>
+                                <td>Nguyễn Văn A</td>
+                                <td>09/01/2025</td>
+                                <td>19:00</td>
+                                <td>105 phút</td>
+                                <td>28/30</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Lớp học HTML/CSS cơ bản</strong></td>
+                                <td>Lê Văn C</td>
+                                <td>08/01/2025</td>
+                                <td>10:00</td>
+                                <td>90 phút</td>
+                                <td>15/20</td>
+                                <td><span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Hoàn thành</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><strong>Họp phụ huynh lớp 11B2</strong></td>
+                                <td>Trần Thị B</td>
+                                <td>07/01/2025</td>
+                                <td>19:30</td>
+                                <td>60 phút</td>
+                                <td>22/30</td>
+                                <td><span class="badge bg-warning"><i class="fas fa-exclamation-circle me-1"></i>Kết thúc sớm</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-primary" title="Xem chi tiết" data-bs-toggle="modal" data-bs-target="#meetingDetailModal"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-info" title="Tải bản ghi"><i class="fas fa-download"></i></button>
+                                  <button class="btn btn-sm btn-outline-secondary" title="Báo cáo"><i class="fas fa-chart-bar"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Meeting Detail Modal -->
+        <div class="modal fade" id="meetingDetailModal" tabindex="-1">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Chi tiết cuộc họp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h6 class="mb-3">Thông tin cuộc họp</h6>
+                    <table class="table table-bordered">
+                      <tr>
+                        <th width="30%">Tên cuộc họp:</th>
+                        <td>Lớp học Toán cao cấp - Buổi 4</td>
+                      </tr>
+                      <tr>
+                        <th>Giảng viên:</th>
+                        <td>Nguyễn Văn A</td>
+                      </tr>
+                      <tr>
+                        <th>Ngày họp:</th>
+                        <td>14/01/2025</td>
+                      </tr>
+                      <tr>
+                        <th>Thời gian:</th>
+                        <td>14:00 - 15:30 (90 phút)</td>
+                      </tr>
+                      <tr>
+                        <th>Số người tham gia:</th>
+                        <td>25/30 (83.3%)</td>
+                      </tr>
+                      <tr>
+                        <th>Trạng thái:</th>
+                        <td><span class="badge bg-success">Hoàn thành</span></td>
+                      </tr>
+                    </table>
+
+                    <h6 class="mt-4 mb-3">Danh sách tham gia</h6>
+                    <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                      <table class="table table-sm table-striped">
+                        <thead>
+                          <tr>
+                            <th>Họ tên</th>
+                            <th>Thời gian vào</th>
+                            <th>Thời gian ra</th>
+                            <th>Thời lượng</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>Nguyễn Văn A (Host)</td><td>13:55</td><td>15:32</td><td>97 phút</td></tr>
+                          <tr><td>Trần Thị B</td><td>14:00</td><td>15:30</td><td>90 phút</td></tr>
+                          <tr><td>Lê Văn C</td><td>14:02</td><td>15:30</td><td>88 phút</td></tr>
+                          <tr><td>Phạm Văn D</td><td>14:00</td><td>15:15</td><td>75 phút</td></tr>
+                          <tr><td>Hoàng Thị E</td><td>14:05</td><td>15:30</td><td>85 phút</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="mb-3">Bản ghi cuộc họp</h6>
+                    <div class="card bg-light">
+                      <div class="card-body text-center">
+                        <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                        <h6>Bản ghi có sẵn</h6>
+                        <p class="small text-muted">Kích thước: 245 MB<br>Thời lượng: 90 phút</p>
+                        <button class="btn btn-primary btn-sm w-100 mb-2"><i class="fas fa-play me-2"></i>Xem bản ghi</button>
+                        <button class="btn btn-outline-primary btn-sm w-100"><i class="fas fa-download me-2"></i>Tải xuống</button>
+                      </div>
+                    </div>
+
+                    <h6 class="mt-4 mb-3">Tài liệu chia sẻ</h6>
+                    <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-file-pdf text-danger me-2"></i>Bai_giang_4.pdf</span>
+                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></button>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-file-powerpoint text-warning me-2"></i>Slides.pptx</span>
+                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary"><i class="fas fa-envelope me-2"></i>Gửi báo cáo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/plugins/DataTables/datatables.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('#meetingHistoryTable').DataTable({
+              order: [[2, 'desc']],
+              language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Vietnamese.json'
+              }
+            });
+          });
+        </script>
+    </body>
+</html>

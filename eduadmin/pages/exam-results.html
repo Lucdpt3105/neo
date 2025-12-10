@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Kết quả thi - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="../../assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li>
+                  <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li>
+                    <li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li>
+                    <li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li>
+                    <li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li>
+                    <li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li>
+                    <li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li>
+                  </ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li>
+                    <li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li>
+                    <li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li>
+                    <li><a href="exam-results.html" class="active"><i class="far fa-circle"></i>Kết quả thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li>
+                    <li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li>
+                    <li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li>
+                    <li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li>
+                    <li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li>
+                    <li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li>
+                    <li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li>
+                    <li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li>
+                    <li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li>
+                    <li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Kết quả thi</h5>
+                    </div>
+                      <div class="header-search">
+                        <form>
+                          <input class="form-control" type="text" placeholder="Tìm kiếm..." aria-label="Search">
+                          <a href="#" class="close-search"><i data-feather="x"></i></a>
+                        </form>
+                      </div>
+                      <div class="flex-fill" id="headerNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                            <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Cài đặt</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats Cards -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">3,456</h5>
+                          <p class="stats-text">Tổng lượt thi</p>
+                        </div>
+                        <div class="stats-icon change-primary">
+                          <i class="material-icons">assignment_turned_in</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">78%</h5>
+                          <p class="stats-text">Tỷ lệ đạt</p>
+                        </div>
+                        <div class="stats-icon change-success">
+                          <i class="material-icons">check_circle</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">7.2</h5>
+                          <p class="stats-text">Điểm trung bình</p>
+                        </div>
+                        <div class="stats-icon change-info">
+                          <i class="material-icons">grade</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">45</h5>
+                          <p class="stats-text">Chờ chấm điểm</p>
+                        </div>
+                        <div class="stats-icon change-warning">
+                          <i class="material-icons">pending_actions</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="row mb-3">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row g-3 align-items-center">
+                          <div class="col-md-3">
+                            <select class="form-select">
+                              <option value="">Tất cả bài thi</option>
+                              <option value="1">Kiểm tra Toán cuối kỳ</option>
+                              <option value="2">IELTS Practice Test 1</option>
+                              <option value="3">Lập trình Python - Final</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <select class="form-select">
+                              <option value="">Trạng thái</option>
+                              <option value="passed">Đạt</option>
+                              <option value="failed">Không đạt</option>
+                              <option value="pending">Chờ chấm</option>
+                            </select>
+                          </div>
+                          <div class="col-md-2">
+                            <input type="date" class="form-control" placeholder="Từ ngày">
+                          </div>
+                          <div class="col-md-2">
+                            <input type="date" class="form-control" placeholder="Đến ngày">
+                          </div>
+                          <div class="col-md-3">
+                            <div class="input-group">
+                              <input type="text" class="form-control" placeholder="Tìm học sinh...">
+                              <button class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Results Table -->
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Kết quả chi tiết</h5>
+                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-file-excel"></i> Export Excel</button>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover" id="resultsTable">
+                            <thead>
+                              <tr>
+                                <th>Học sinh</th>
+                                <th>Bài thi</th>
+                                <th>Điểm</th>
+                                <th>Thời gian</th>
+                                <th>Ngày thi</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                                    <div>
+                                      <strong>Nguyễn Văn An</strong>
+                                      <small class="text-muted d-block">an.nguyen@email.com</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>Kiểm tra Toán cuối kỳ</td>
+                                <td><strong class="text-success">8.5/10</strong></td>
+                                <td>42 phút</td>
+                                <td>15/01/2025</td>
+                                <td><span class="badge bg-success">Đạt</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                                    <div>
+                                      <strong>Trần Thị Bình</strong>
+                                      <small class="text-muted d-block">binh.tran@email.com</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>IELTS Practice Test 1</td>
+                                <td><strong class="text-primary">7.0/9</strong></td>
+                                <td>55 phút</td>
+                                <td>15/01/2025</td>
+                                <td><span class="badge bg-success">Đạt</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                                    <div>
+                                      <strong>Lê Văn Cường</strong>
+                                      <small class="text-muted d-block">cuong.le@email.com</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>Kiểm tra Toán cuối kỳ</td>
+                                <td><strong class="text-danger">4.0/10</strong></td>
+                                <td>60 phút</td>
+                                <td>15/01/2025</td>
+                                <td><span class="badge bg-danger">Không đạt</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                                    <div>
+                                      <strong>Phạm Văn Đức</strong>
+                                      <small class="text-muted d-block">duc.pham@email.com</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>Lập trình Python - Final</td>
+                                <td><strong class="text-warning">-</strong></td>
+                                <td>58 phút</td>
+                                <td>14/01/2025</td>
+                                <td><span class="badge bg-warning text-dark">Chờ chấm</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-warning"><i class="fas fa-edit"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                                    <div>
+                                      <strong>Hoàng Thị Em</strong>
+                                      <small class="text-muted d-block">em.hoang@email.com</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>Kiểm tra Toán cuối kỳ</td>
+                                <td><strong class="text-success">9.5/10</strong></td>
+                                <td>35 phút</td>
+                                <td>14/01/2025</td>
+                                <td><span class="badge bg-success">Đạt</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                                    <div>
+                                      <strong>Vũ Minh Phúc</strong>
+                                      <small class="text-muted d-block">phuc.vu@email.com</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>IELTS Practice Test 1</td>
+                                <td><strong class="text-danger">5.0/9</strong></td>
+                                <td>60 phút</td>
+                                <td>14/01/2025</td>
+                                <td><span class="badge bg-danger">Không đạt</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info"><i class="fas fa-eye"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sidebar Stats -->
+                  <div class="col-lg-4">
+                    <!-- Score Distribution -->
+                    <div class="card mb-4">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Phân bố điểm số</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                          <span>9-10 điểm (Giỏi)</span>
+                          <strong>245</strong>
+                        </div>
+                        <div class="progress mb-3" style="height: 8px;">
+                          <div class="progress-bar bg-success" style="width: 25%;"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                          <span>7-8 điểm (Khá)</span>
+                          <strong>567</strong>
+                        </div>
+                        <div class="progress mb-3" style="height: 8px;">
+                          <div class="progress-bar" style="width: 45%; background: #001BB7;"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                          <span>5-6 điểm (TB)</span>
+                          <strong>423</strong>
+                        </div>
+                        <div class="progress mb-3" style="height: 8px;">
+                          <div class="progress-bar bg-warning" style="width: 35%;"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-2">
+                          <span>Dưới 5 điểm</span>
+                          <strong>221</strong>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                          <div class="progress-bar bg-danger" style="width: 18%;"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pending Grading -->
+                    <div class="card mb-4">
+                      <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Chờ chấm điểm</h5>
+                        <span class="badge bg-warning text-dark">45</span>
+                      </div>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                              <strong>Phạm Văn Đức</strong>
+                              <small class="text-muted d-block">Lập trình Python - Final</small>
+                            </div>
+                            <button class="btn btn-sm btn-warning">Chấm</button>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                              <strong>Nguyễn Thị Giang</strong>
+                              <small class="text-muted d-block">Toán cao cấp - Tự luận</small>
+                            </div>
+                            <button class="btn btn-sm btn-warning">Chấm</button>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            <div>
+                              <strong>Trần Văn Hải</strong>
+                              <small class="text-muted d-block">Lập trình Python - Final</small>
+                            </div>
+                            <button class="btn btn-sm btn-warning">Chấm</button>
+                          </li>
+                        </ul>
+                        <div class="text-center mt-3">
+                          <a href="#" class="text-primary">Xem tất cả →</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Top Performers -->
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Top điểm cao</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                          <span class="badge bg-warning text-dark me-2" style="width: 30px;">1</span>
+                          <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                          <div class="flex-fill">
+                            <strong>Hoàng Thị Em</strong>
+                            <small class="text-muted d-block">Toán cuối kỳ</small>
+                          </div>
+                          <strong class="text-success">9.5</strong>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <span class="badge bg-secondary me-2" style="width: 30px;">2</span>
+                          <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                          <div class="flex-fill">
+                            <strong>Lê Văn Kiên</strong>
+                            <small class="text-muted d-block">IELTS Test</small>
+                          </div>
+                          <strong class="text-success">9.0</strong>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <span class="badge bg-secondary me-2" style="width: 30px; background: #cd7f32 !important;">3</span>
+                          <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-2" width="35">
+                          <div class="flex-fill">
+                            <strong>Nguyễn Văn An</strong>
+                            <small class="text-muted d-block">Toán cuối kỳ</small>
+                          </div>
+                          <strong class="text-success">8.5</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/plugins/DataTables/datatables.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('#resultsTable').DataTable({
+              "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Vietnamese.json"
+              }
+            });
+          });
+        </script>
+    </body>
+</html>

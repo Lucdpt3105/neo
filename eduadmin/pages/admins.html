@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Quản trị viên - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+        <link href="../../assets/plugins/DataTables/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li>
+                  <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li>
+                    <li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li>
+                    <li><a href="admins.html" class="active"><i class="far fa-circle"></i>Quản trị viên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li>
+                    <li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li>
+                    <li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li>
+                    <li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li>
+                    <li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li>
+                    <li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li>
+                    <li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li>
+                    <li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li>
+                    <li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li>
+                    <li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li>
+                    <li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li>
+                    <li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li>
+                    <li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li>
+                    <li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li>
+                    <li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li>
+                    <li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Quản trị viên</h5>
+                    </div>
+                      <div class="header-search">
+                        <form>
+                          <input class="form-control" type="text" placeholder="Tìm kiếm..." aria-label="Search">
+                          <a href="#" class="close-search"><i data-feather="x"></i></a>
+                        </form>
+                      </div>
+                      <div class="flex-fill" id="headerNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                            <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Cài đặt</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats Cards -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">5</h5>
+                          <p class="stats-text">Tổng quản trị viên</p>
+                        </div>
+                        <div class="stats-icon change-primary">
+                          <i class="material-icons">admin_panel_settings</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">4</h5>
+                          <p class="stats-text">Đang hoạt động</p>
+                        </div>
+                        <div class="stats-icon change-success">
+                          <i class="material-icons">verified_user</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">2</h5>
+                          <p class="stats-text">Super Admin</p>
+                        </div>
+                        <div class="stats-icon change-info">
+                          <i class="material-icons">security</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">3</h5>
+                          <p class="stats-text">Moderator</p>
+                        </div>
+                        <div class="stats-icon change-warning">
+                          <i class="material-icons">supervisor_account</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Admins Table -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Danh sách Quản trị viên</h5>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAdminModal">
+                          <i class="fas fa-plus"></i> Thêm admin
+                        </button>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Quản trị viên</th>
+                                <th>Email</th>
+                                <th>Vai trò</th>
+                                <th>Quyền hạn</th>
+                                <th>Đăng nhập cuối</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" alt="" class="rounded-circle me-2" width="40">
+                                    <div>
+                                      <strong>Nguyễn Admin</strong>
+                                      <small class="text-muted d-block">@nguyenadmin</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>admin@eduadmin.vn</td>
+                                <td><span class="badge bg-danger">Super Admin</span></td>
+                                <td>
+                                  <span class="badge bg-primary me-1">Tất cả</span>
+                                </td>
+                                <td>
+                                  <small>15 phút trước</small>
+                                </td>
+                                <td><span class="badge bg-success">Online</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning me-1"><i class="fas fa-edit"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" alt="" class="rounded-circle me-2" width="40">
+                                    <div>
+                                      <strong>Trần Thị Super</strong>
+                                      <small class="text-muted d-block">@tranthisuper</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>super@eduadmin.vn</td>
+                                <td><span class="badge bg-danger">Super Admin</span></td>
+                                <td>
+                                  <span class="badge bg-primary me-1">Tất cả</span>
+                                </td>
+                                <td>
+                                  <small>2 giờ trước</small>
+                                </td>
+                                <td><span class="badge bg-secondary">Offline</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning me-1"><i class="fas fa-edit"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" alt="" class="rounded-circle me-2" width="40">
+                                    <div>
+                                      <strong>Lê Văn Mod</strong>
+                                      <small class="text-muted d-block">@levanmod</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>mod1@eduadmin.vn</td>
+                                <td><span class="badge bg-warning text-dark">Moderator</span></td>
+                                <td>
+                                  <span class="badge bg-info me-1">Diễn đàn</span>
+                                  <span class="badge bg-secondary me-1">Nội dung</span>
+                                </td>
+                                <td>
+                                  <small>1 ngày trước</small>
+                                </td>
+                                <td><span class="badge bg-success">Online</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning me-1"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger me-1"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" alt="" class="rounded-circle me-2" width="40">
+                                    <div>
+                                      <strong>Phạm Thị Content</strong>
+                                      <small class="text-muted d-block">@phamthicontent</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>content@eduadmin.vn</td>
+                                <td><span class="badge bg-warning text-dark">Moderator</span></td>
+                                <td>
+                                  <span class="badge bg-success me-1">Khóa học</span>
+                                  <span class="badge bg-info me-1">Bài thi</span>
+                                </td>
+                                <td>
+                                  <small>3 giờ trước</small>
+                                </td>
+                                <td><span class="badge bg-success">Online</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning me-1"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-danger me-1"><i class="fas fa-trash"></i></button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/avatars/profile-image.png" alt="" class="rounded-circle me-2" width="40">
+                                    <div>
+                                      <strong>Hoàng Văn Support</strong>
+                                      <small class="text-muted d-block">@hoangvansupport</small>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>support@eduadmin.vn</td>
+                                <td><span class="badge bg-warning text-dark">Moderator</span></td>
+                                <td>
+                                  <span class="badge bg-primary me-1">Hỗ trợ</span>
+                                  <span class="badge bg-info me-1">Người dùng</span>
+                                </td>
+                                <td>
+                                  <small>5 ngày trước</small>
+                                </td>
+                                <td><span class="badge bg-danger">Khóa</span></td>
+                                <td>
+                                  <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                                  <button class="btn btn-sm btn-outline-warning me-1"><i class="fas fa-edit"></i></button>
+                                  <button class="btn btn-sm btn-outline-success me-1"><i class="fas fa-unlock"></i></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Roles & Permissions -->
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Vai trò hệ thống</h5>
+                      </div>
+                      <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <strong class="text-danger">Super Admin</strong>
+                              <small class="text-muted d-block">Toàn quyền quản lý hệ thống</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">2</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <strong class="text-warning">Moderator</strong>
+                              <small class="text-muted d-block">Kiểm duyệt nội dung và hỗ trợ</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">3</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <strong class="text-info">Content Manager</strong>
+                              <small class="text-muted d-block">Quản lý nội dung khóa học</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">0</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <strong class="text-success">Support</strong>
+                              <small class="text-muted d-block">Hỗ trợ người dùng</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">0</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Hoạt động gần đây</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="activity-timeline">
+                          <div class="d-flex mb-3">
+                            <div class="me-3">
+                              <span class="badge bg-success rounded-circle p-2"><i class="fas fa-user-plus"></i></span>
+                            </div>
+                            <div>
+                              <strong>Nguyễn Admin</strong>
+                              <small class="text-muted d-block">Đã thêm giáo viên mới</small>
+                              <small class="text-muted">15 phút trước</small>
+                            </div>
+                          </div>
+                          <div class="d-flex mb-3">
+                            <div class="me-3">
+                              <span class="badge bg-warning text-dark rounded-circle p-2"><i class="fas fa-edit"></i></span>
+                            </div>
+                            <div>
+                              <strong>Lê Văn Mod</strong>
+                              <small class="text-muted d-block">Đã kiểm duyệt 5 bài viết</small>
+                              <small class="text-muted">1 giờ trước</small>
+                            </div>
+                          </div>
+                          <div class="d-flex mb-3">
+                            <div class="me-3">
+                              <span class="badge bg-info rounded-circle p-2"><i class="fas fa-cog"></i></span>
+                            </div>
+                            <div>
+                              <strong>Trần Thị Super</strong>
+                              <small class="text-muted d-block">Đã cập nhật cài đặt hệ thống</small>
+                              <small class="text-muted">2 giờ trước</small>
+                            </div>
+                          </div>
+                          <div class="d-flex mb-3">
+                            <div class="me-3">
+                              <span class="badge bg-danger rounded-circle p-2"><i class="fas fa-ban"></i></span>
+                            </div>
+                            <div>
+                              <strong>Phạm Thị Content</strong>
+                              <small class="text-muted d-block">Đã khóa 1 tài khoản vi phạm</small>
+                              <small class="text-muted">3 giờ trước</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Add Admin Modal -->
+        <div class="modal fade" id="addAdminModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Thêm Quản trị viên mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" placeholder="Nhập họ và tên">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Tên đăng nhập</label>
+                    <input type="text" class="form-control" placeholder="Nhập tên đăng nhập">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Nhập email">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Vai trò</label>
+                    <select class="form-select">
+                      <option value="">Chọn vai trò</option>
+                      <option value="super">Super Admin</option>
+                      <option value="mod">Moderator</option>
+                      <option value="content">Content Manager</option>
+                      <option value="support">Support</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Trạng thái</label>
+                    <select class="form-select">
+                      <option value="active">Hoạt động</option>
+                      <option value="inactive">Không hoạt động</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Quyền hạn</label>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perm1">
+                        <label class="form-check-label" for="perm1">Quản lý người dùng</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perm2">
+                        <label class="form-check-label" for="perm2">Quản lý khóa học</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perm3">
+                        <label class="form-check-label" for="perm3">Quản lý bài thi</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perm4">
+                        <label class="form-check-label" for="perm4">Kiểm duyệt diễn đàn</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perm5">
+                        <label class="form-check-label" for="perm5">Xem báo cáo</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="perm6">
+                        <label class="form-check-label" for="perm6">Cài đặt hệ thống</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Thêm quản trị viên</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+    </body>
+</html>

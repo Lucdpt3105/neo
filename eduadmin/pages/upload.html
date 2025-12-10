@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Tải lên tài liệu - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+        <style>
+          .upload-area {
+            border: 3px dashed #001BB7;
+            border-radius: 10px;
+            padding: 60px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, rgba(0,27,183,0.05), rgba(0,70,255,0.05));
+          }
+          .upload-area:hover {
+            border-color: #0046FF;
+            background: linear-gradient(135deg, rgba(0,27,183,0.1), rgba(0,70,255,0.1));
+          }
+          .upload-area.dragover {
+            border-color: #FF8040;
+            background: linear-gradient(135deg, rgba(255,128,64,0.1), rgba(255,96,32,0.1));
+          }
+          .file-item {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            transition: all 0.2s;
+          }
+          .file-item:hover {
+            box-shadow: 0 2px 8px rgba(0,27,183,0.1);
+          }
+          .file-icon {
+            font-size: 2rem;
+          }
+          .progress {
+            height: 6px;
+          }
+        </style>
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li><a href="index.html"><i data-feather="home"></i>Dashboard</a></li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li><li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li><li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li><li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li><li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li><li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li><li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li><li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li><li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li><li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li><li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li><li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li><li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li></ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li><li><a href="upload.html" class="active"><i class="far fa-circle"></i>Tải lên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li><li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li><li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li><li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li><li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li></ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Tải lên tài liệu</h5>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                          <div class="dropdown-menu dropdown-menu-end profile-drop-menu">
+                            <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                            <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">1,234</h5><p class="stats-text">Tổng file</p></div>
+                        <div class="stats-icon change-primary"><i class="material-icons">insert_drive_file</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">15.8 GB</h5><p class="stats-text">Dung lượng sử dụng</p></div>
+                        <div class="stats-icon change-info"><i class="material-icons">storage</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">84.2 GB</h5><p class="stats-text">Còn trống</p></div>
+                        <div class="stats-icon change-success"><i class="material-icons">cloud_done</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">45</h5><p class="stats-text">Tải lên hôm nay</p></div>
+                        <div class="stats-icon change-warning"><i class="material-icons">upload</i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Upload Area -->
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0"><i class="fas fa-cloud-upload-alt text-primary me-2"></i>Kéo thả hoặc chọn file để tải lên</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="upload-area" id="uploadArea">
+                          <i class="fas fa-cloud-upload-alt fa-4x text-primary mb-3"></i>
+                          <h5>Kéo thả file vào đây</h5>
+                          <p class="text-muted">hoặc</p>
+                          <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-folder-open me-2"></i>Chọn file từ máy tính
+                          </button>
+                          <input type="file" id="fileInput" multiple style="display: none;">
+                          <p class="text-muted small mt-3 mb-0">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Hỗ trợ: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, JPG, PNG, MP4, MP3, ZIP<br>
+                            Kích thước tối đa: 500 MB/file
+                          </p>
+                        </div>
+
+                        <!-- File Information Form -->
+                        <div class="mt-4" id="fileInfoForm" style="display: none;">
+                          <h6 class="mb-3">Thông tin file tải lên</h6>
+                          <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label class="form-label">Danh mục <span class="text-danger">*</span></label>
+                              <select class="form-select" id="categorySelect">
+                                <option value="">Chọn danh mục</option>
+                                <option value="lecture">Bài giảng</option>
+                                <option value="exercise">Bài tập</option>
+                                <option value="exam">Đề thi</option>
+                                <option value="reference">Tài liệu tham khảo</option>
+                                <option value="video">Video bài giảng</option>
+                                <option value="other">Khác</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <label class="form-label">Môn học</label>
+                              <select class="form-select">
+                                <option value="">Chọn môn học</option>
+                                <option>Toán</option>
+                                <option>Vật lý</option>
+                                <option>Hóa học</option>
+                                <option>Tiếng Anh</option>
+                                <option>Lập trình</option>
+                              </select>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                              <label class="form-label">Mô tả</label>
+                              <textarea class="form-control" rows="2" placeholder="Mô tả ngắn về tài liệu..."></textarea>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="publicAccess" checked>
+                                <label class="form-check-label" for="publicAccess">Công khai cho tất cả học sinh</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="allowDownload" checked>
+                                <label class="form-check-label" for="allowDownload">Cho phép tải xuống</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Upload Queue -->
+                    <div class="card" id="uploadQueue" style="display: none;">
+                      <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Hàng đợi tải lên</h5>
+                        <button class="btn btn-sm btn-primary" id="startUploadBtn">
+                          <i class="fas fa-upload me-2"></i>Bắt đầu tải lên
+                        </button>
+                      </div>
+                      <div class="card-body" id="fileList">
+                        <!-- Files will be added here dynamically -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Recent Uploads & Guidelines -->
+                  <div class="col-lg-4">
+                    <!-- Recent Uploads -->
+                    <div class="card mb-4">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Tải lên gần đây</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
+                          <i class="fas fa-file-pdf text-danger fa-2x me-3"></i>
+                          <div class="flex-grow-1">
+                            <h6 class="mb-0 small">Bai_giang_toan.pdf</h6>
+                            <small class="text-muted">2 phút trước</small>
+                          </div>
+                          <span class="badge bg-success">Hoàn thành</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
+                          <i class="fas fa-file-word text-primary fa-2x me-3"></i>
+                          <div class="flex-grow-1">
+                            <h6 class="mb-0 small">Bai_tap_ly.docx</h6>
+                            <small class="text-muted">15 phút trước</small>
+                          </div>
+                          <span class="badge bg-success">Hoàn thành</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
+                          <i class="fas fa-file-video text-info fa-2x me-3"></i>
+                          <div class="flex-grow-1">
+                            <h6 class="mb-0 small">Video_hoa_hoc.mp4</h6>
+                            <small class="text-muted">1 giờ trước</small>
+                          </div>
+                          <span class="badge bg-success">Hoàn thành</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <i class="fas fa-file-powerpoint text-warning fa-2x me-3"></i>
+                          <div class="flex-grow-1">
+                            <h6 class="mb-0 small">Slides_anh_van.pptx</h6>
+                            <small class="text-muted">2 giờ trước</small>
+                          </div>
+                          <span class="badge bg-success">Hoàn thành</span>
+                        </div>
+                        <div class="text-center mt-3">
+                          <a href="file-manager.html" class="text-primary">Xem tất cả →</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Storage Info -->
+                    <div class="card mb-4">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Dung lượng lưu trữ</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="progress mb-3" style="height: 20px;">
+                          <div class="progress-bar bg-primary" role="progressbar" style="width: 15.8%">15.8%</div>
+                        </div>
+                        <p class="mb-2"><strong>Đã sử dụng:</strong> 15.8 GB / 100 GB</p>
+                        <p class="mb-0 text-muted small">Còn lại: 84.2 GB</p>
+                      </div>
+                    </div>
+
+                    <!-- Guidelines -->
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0"><i class="fas fa-info-circle text-info me-2"></i>Hướng dẫn</h5>
+                      </div>
+                      <div class="card-body">
+                        <ul class="small mb-0">
+                          <li class="mb-2">Đặt tên file rõ ràng, dễ tìm kiếm</li>
+                          <li class="mb-2">Phân loại file vào đúng danh mục</li>
+                          <li class="mb-2">Nén file lớn trước khi tải lên</li>
+                          <li class="mb-2">Kiểm tra file trước khi chia sẻ</li>
+                          <li>Không tải lên file có bản quyền</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+        <script>
+          // File upload functionality
+          const uploadArea = document.getElementById('uploadArea');
+          const fileInput = document.getElementById('fileInput');
+          const fileInfoForm = document.getElementById('fileInfoForm');
+          const uploadQueue = document.getElementById('uploadQueue');
+          const fileList = document.getElementById('fileList');
+
+          // Drag and drop
+          ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, preventDefaults, false);
+          });
+
+          function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+
+          ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => uploadArea.classList.add('dragover'), false);
+          });
+
+          ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('dragover'), false);
+          });
+
+          uploadArea.addEventListener('drop', handleDrop, false);
+
+          function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+          }
+
+          fileInput.addEventListener('change', function() {
+            handleFiles(this.files);
+          });
+
+          function handleFiles(files) {
+            if (files.length > 0) {
+              fileInfoForm.style.display = 'block';
+              uploadQueue.style.display = 'block';
+              fileList.innerHTML = '';
+              
+              Array.from(files).forEach(file => {
+                const fileItem = createFileItem(file);
+                fileList.appendChild(fileItem);
+              });
+            }
+          }
+
+          function createFileItem(file) {
+            const div = document.createElement('div');
+            div.className = 'file-item';
+            
+            const icon = getFileIcon(file.name);
+            const size = formatFileSize(file.size);
+            
+            div.innerHTML = `
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center flex-grow-1">
+                  <i class="${icon} file-icon me-3"></i>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1">${file.name}</h6>
+                    <small class="text-muted">${size}</small>
+                    <div class="progress mt-2" style="display: none;">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-danger" onclick="this.parentElement.parentElement.remove()">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            `;
+            
+            return div;
+          }
+
+          function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const icons = {
+              'pdf': 'fas fa-file-pdf text-danger',
+              'doc': 'fas fa-file-word text-primary',
+              'docx': 'fas fa-file-word text-primary',
+              'xls': 'fas fa-file-excel text-success',
+              'xlsx': 'fas fa-file-excel text-success',
+              'ppt': 'fas fa-file-powerpoint text-warning',
+              'pptx': 'fas fa-file-powerpoint text-warning',
+              'jpg': 'fas fa-file-image text-info',
+              'jpeg': 'fas fa-file-image text-info',
+              'png': 'fas fa-file-image text-info',
+              'mp4': 'fas fa-file-video text-info',
+              'mp3': 'fas fa-file-audio text-success',
+              'zip': 'fas fa-file-archive text-secondary'
+            };
+            return icons[ext] || 'fas fa-file text-secondary';
+          }
+
+          function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+          }
+
+          document.getElementById('startUploadBtn').addEventListener('click', function() {
+            alert('Chức năng tải lên sẽ được triển khai với backend!');
+          });
+        </script>
+    </body>
+</html>

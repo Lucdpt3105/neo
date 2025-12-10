@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Bài viết diễn đàn - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li><a href="index.html"><i data-feather="home"></i>Dashboard</a></li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li><li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li><li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li><li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li><li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li><li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li><li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li><li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li><li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li></ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li><li><a href="forum-posts.html" class="active"><i class="far fa-circle"></i>Bài viết</a></li><li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="meetings.html"><i class="far fa-circle"></i>Phòng họp</a></li><li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li><li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li><li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li><li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li><li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li></ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul><li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li><li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li><li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li></ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Bài viết diễn đàn</h5>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                          <div class="dropdown-menu dropdown-menu-end profile-drop-menu">
+                            <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                            <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">1,245</h5><p class="stats-text">Tổng bài viết</p></div>
+                        <div class="stats-icon change-primary"><i class="material-icons">article</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">89</h5><p class="stats-text">Hôm nay</p></div>
+                        <div class="stats-icon change-success"><i class="material-icons">today</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">3,456</h5><p class="stats-text">Bình luận</p></div>
+                        <div class="stats-icon change-info"><i class="material-icons">comment</i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info"><h5 class="card-title">23</h5><p class="stats-text">Chờ duyệt</p></div>
+                        <div class="stats-icon change-warning"><i class="material-icons">pending</i></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Posts List -->
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Danh sách bài viết</h5>
+                    <div>
+                      <select class="form-select form-select-sm d-inline-block w-auto me-2">
+                        <option>Tất cả chủ đề</option>
+                        <option>Hỏi đáp Toán học</option>
+                        <option>Tiếng Anh</option>
+                        <option>Lập trình</option>
+                      </select>
+                      <select class="form-select form-select-sm d-inline-block w-auto">
+                        <option>Mới nhất</option>
+                        <option>Nhiều lượt xem</option>
+                        <option>Nhiều bình luận</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <!-- Post 1 -->
+                    <div class="border rounded p-3 mb-3">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-3" width="50" height="50">
+                          <div>
+                            <h6 class="mb-1">Làm sao để giải phương trình bậc 2 nhanh nhất?</h6>
+                            <div class="small text-muted mb-2">
+                              <span class="me-3"><i class="fas fa-user"></i> Nguyễn Văn An</span>
+                              <span class="me-3"><i class="fas fa-folder"></i> Hỏi đáp Toán học</span>
+                              <span><i class="fas fa-clock"></i> 2 giờ trước</span>
+                            </div>
+                            <p class="text-muted mb-2 small">Mình đang học cách giải phương trình bậc 2 nhưng thấy làm theo công thức hơi chậm. Có cách nào nhanh hơn không ạ?</p>
+                            <div>
+                              <span class="badge bg-light text-dark me-2"><i class="fas fa-eye"></i> 234 lượt xem</span>
+                              <span class="badge bg-light text-dark me-2"><i class="fas fa-comment"></i> 15 bình luận</span>
+                              <span class="badge bg-light text-dark"><i class="fas fa-heart text-danger"></i> 23 thích</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <span class="badge bg-success mb-2">Đã duyệt</span><br>
+                          <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                          <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="border rounded p-3 mb-3">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-3" width="50" height="50">
+                          <div>
+                            <h6 class="mb-1">Chia sẻ tài liệu IELTS Writing Task 2</h6>
+                            <div class="small text-muted mb-2">
+                              <span class="me-3"><i class="fas fa-user"></i> Trần Thị Bình</span>
+                              <span class="me-3"><i class="fas fa-folder"></i> Tiếng Anh</span>
+                              <span><i class="fas fa-clock"></i> 5 giờ trước</span>
+                            </div>
+                            <p class="text-muted mb-2 small">Mình có sưu tầm được bộ tài liệu IELTS Writing Task 2 rất hay, chia sẻ cho mọi người cùng học nhé...</p>
+                            <div>
+                              <span class="badge bg-light text-dark me-2"><i class="fas fa-eye"></i> 567 lượt xem</span>
+                              <span class="badge bg-light text-dark me-2"><i class="fas fa-comment"></i> 42 bình luận</span>
+                              <span class="badge bg-light text-dark"><i class="fas fa-heart text-danger"></i> 89 thích</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <span class="badge bg-success mb-2">Đã duyệt</span><br>
+                          <button class="btn btn-sm btn-outline-info me-1"><i class="fas fa-eye"></i></button>
+                          <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Post 3 - Pending -->
+                    <div class="border rounded p-3 mb-3 bg-light">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle me-3" width="50" height="50">
+                          <div>
+                            <h6 class="mb-1">Hỏi về vòng lặp trong Python</h6>
+                            <div class="small text-muted mb-2">
+                              <span class="me-3"><i class="fas fa-user"></i> Lê Văn Cường</span>
+                              <span class="me-3"><i class="fas fa-folder"></i> Lập trình</span>
+                              <span><i class="fas fa-clock"></i> 30 phút trước</span>
+                            </div>
+                            <p class="text-muted mb-2 small">Mình không hiểu sự khác nhau giữa vòng lặp for và while trong Python. Ai giải thích giúp mình với...</p>
+                          </div>
+                        </div>
+                        <div>
+                          <span class="badge bg-warning text-dark mb-2">Chờ duyệt</span><br>
+                          <button class="btn btn-sm btn-success me-1"><i class="fas fa-check"></i></button>
+                          <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-4">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Trước</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Sau</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+    </body>
+</html>

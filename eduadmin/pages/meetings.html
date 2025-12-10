@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hệ thống Quản lý Học tập">
+        <meta name="keywords" content="admin,dashboard,education">
+        <meta name="author" content="EduAdmin">
+        
+        <!-- Title -->
+        <title>Họp nhóm - EduAdmin</title>
+
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+        <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../../assets/plugins/pace/pace.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../../assets/css/main.min.css" rel="stylesheet">
+        <link href="../../assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body class="">
+        <div class="page-container">
+          <div class="page-sidebar">
+              <a class="logo" href="index.html"><i class="fas fa-graduation-cap"></i> EduAdmin</a>
+              <ul class="list-unstyled accordion-menu">
+                <li>
+                  <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="users"></i>Người dùng<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="students.html"><i class="far fa-circle"></i>Học sinh</a></li>
+                    <li><a href="teachers.html"><i class="far fa-circle"></i>Giáo viên</a></li>
+                    <li><a href="admins.html"><i class="far fa-circle"></i>Quản trị viên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="book-open"></i>Khóa học<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="courses.html"><i class="far fa-circle"></i>Danh sách khóa học</a></li>
+                    <li><a href="add-course.html"><i class="far fa-circle"></i>Thêm khóa học</a></li>
+                    <li><a href="categories.html"><i class="far fa-circle"></i>Danh mục</a></li>
+                    <li><a href="lessons.html"><i class="far fa-circle"></i>Bài học</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="edit-3"></i>Hệ thống Thi<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="exams.html"><i class="far fa-circle"></i>Danh sách bài thi</a></li>
+                    <li><a href="add-exam.html"><i class="far fa-circle"></i>Tạo bài thi</a></li>
+                    <li><a href="questions.html"><i class="far fa-circle"></i>Ngân hàng câu hỏi</a></li>
+                    <li><a href="exam-results.html"><i class="far fa-circle"></i>Kết quả thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="message-circle"></i>Diễn đàn<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="forum-topics.html"><i class="far fa-circle"></i>Chủ đề thảo luận</a></li>
+                    <li><a href="forum-posts.html"><i class="far fa-circle"></i>Bài viết</a></li>
+                    <li><a href="forum-moderate.html"><i class="far fa-circle"></i>Kiểm duyệt</a></li>
+                  </ul>
+                </li>
+                <li class="active-page">
+                  <a href="#"><i data-feather="video"></i>Họp nhóm<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="meetings.html" class="active"><i class="far fa-circle"></i>Phòng họp</a></li>
+                    <li><a href="schedule-meeting.html"><i class="far fa-circle"></i>Lịch họp</a></li>
+                    <li><a href="meeting-history.html"><i class="far fa-circle"></i>Lịch sử họp</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="file-text"></i>Tài liệu<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="file-manager.html"><i class="far fa-circle"></i>Quản lý file</a></li>
+                    <li><a href="upload.html"><i class="far fa-circle"></i>Tải lên</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="bar-chart-2"></i>Báo cáo<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="reports-students.html"><i class="far fa-circle"></i>Thống kê học sinh</a></li>
+                    <li><a href="reports-courses.html"><i class="far fa-circle"></i>Thống kê khóa học</a></li>
+                    <li><a href="reports-exams.html"><i class="far fa-circle"></i>Thống kê bài thi</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#"><i data-feather="settings"></i>Cài đặt<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                  <ul class="">
+                    <li><a href="settings-general.html"><i class="far fa-circle"></i>Cài đặt chung</a></li>
+                    <li><a href="settings-email.html"><i class="far fa-circle"></i>Email</a></li>
+                    <li><a href="settings-payment.html"><i class="far fa-circle"></i>Thanh toán</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+          </div>
+            <div class="page-content">
+              <div class="page-header">
+                  <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                      <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                      <h5>Phòng họp Online</h5>
+                    </div>
+                      <div class="header-search">
+                        <form>
+                          <input class="form-control" type="text" placeholder="Tìm kiếm..." aria-label="Search">
+                          <a href="#" class="close-search"><i data-feather="x"></i></a>
+                        </form>
+                      </div>
+                      <div class="flex-fill" id="headerNav">
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/avatars/profile-image.png" alt=""></a>
+                            <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                              <a class="dropdown-item" href="#"><i data-feather="user"></i>Hồ sơ</a>
+                              <a class="dropdown-item" href="#"><i data-feather="settings"></i>Cài đặt</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i>Đăng xuất</a>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </nav>
+              </div>
+              <div class="main-wrapper">
+                <!-- Stats Cards -->
+                <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">5</h5>
+                          <p class="stats-text">Phòng đang họp</p>
+                        </div>
+                        <div class="stats-icon change-success">
+                          <i class="material-icons">videocam</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">156</h5>
+                          <p class="stats-text">Người tham gia</p>
+                        </div>
+                        <div class="stats-icon change-primary">
+                          <i class="material-icons">people</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">12</h5>
+                          <p class="stats-text">Lịch họp hôm nay</p>
+                        </div>
+                        <div class="stats-icon change-info">
+                          <i class="material-icons">event</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                    <div class="card stats-card">
+                      <div class="card-body">
+                        <div class="stats-info">
+                          <h5 class="card-title">45h</h5>
+                          <p class="stats-text">Thời gian họp (tuần)</p>
+                        </div>
+                        <div class="stats-icon change-warning">
+                          <i class="material-icons">schedule</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row text-center">
+                          <div class="col-md-3 mb-3 mb-md-0">
+                            <button class="btn btn-primary btn-lg w-100" data-bs-toggle="modal" data-bs-target="#createMeetingModal">
+                              <i class="fas fa-plus-circle me-2"></i>Tạo phòng họp mới
+                            </button>
+                          </div>
+                          <div class="col-md-3 mb-3 mb-md-0">
+                            <button class="btn btn-success btn-lg w-100" data-bs-toggle="modal" data-bs-target="#joinMeetingModal">
+                              <i class="fas fa-sign-in-alt me-2"></i>Tham gia họp
+                            </button>
+                          </div>
+                          <div class="col-md-3 mb-3 mb-md-0">
+                            <a href="schedule-meeting.html" class="btn btn-info btn-lg w-100">
+                              <i class="fas fa-calendar-plus me-2"></i>Lên lịch họp
+                            </a>
+                          </div>
+                          <div class="col-md-3">
+                            <a href="meeting-history.html" class="btn btn-secondary btn-lg w-100">
+                              <i class="fas fa-history me-2"></i>Lịch sử họp
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Active Meetings -->
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0"><i class="fas fa-circle text-success me-2" style="font-size: 10px;"></i>Phòng họp đang hoạt động</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <!-- Meeting Room 1 -->
+                          <div class="col-md-6 mb-4">
+                            <div class="card bg-dark text-white h-100">
+                              <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                  <span class="badge bg-success">Đang họp</span>
+                                  <span class="badge bg-secondary"><i class="fas fa-lock me-1"></i>Riêng tư</span>
+                                </div>
+                                <h5 class="card-title">Họp lớp 12A1</h5>
+                                <p class="card-text small text-muted">Thảo luận về kế hoạch ôn thi THPT</p>
+                                <div class="d-flex align-items-center mb-3">
+                                  <div class="avatar-group">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <span class="badge bg-secondary rounded-circle" style="margin-left: -10px; width: 30px; height: 30px; line-height: 22px;">+32</span>
+                                  </div>
+                                  <small class="ms-2 text-muted">35 người tham gia</small>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <small class="text-muted"><i class="fas fa-clock me-1"></i>45 phút</small>
+                                  <button class="btn btn-primary btn-sm">Tham gia</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Meeting Room 2 -->
+                          <div class="col-md-6 mb-4">
+                            <div class="card bg-dark text-white h-100">
+                              <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                  <span class="badge bg-success">Đang họp</span>
+                                  <span class="badge bg-info"><i class="fas fa-globe me-1"></i>Công khai</span>
+                                </div>
+                                <h5 class="card-title">Seminar Toán học</h5>
+                                <p class="card-text small text-muted">Giải đề thi thử số 5</p>
+                                <div class="d-flex align-items-center mb-3">
+                                  <div class="avatar-group">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <span class="badge bg-secondary rounded-circle" style="margin-left: -10px; width: 30px; height: 30px; line-height: 22px;">+56</span>
+                                  </div>
+                                  <small class="ms-2 text-muted">58 người tham gia</small>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <small class="text-muted"><i class="fas fa-clock me-1"></i>1h 20 phút</small>
+                                  <button class="btn btn-primary btn-sm">Tham gia</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Meeting Room 3 -->
+                          <div class="col-md-6 mb-4">
+                            <div class="card bg-dark text-white h-100">
+                              <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                  <span class="badge bg-success">Đang họp</span>
+                                  <span class="badge bg-secondary"><i class="fas fa-lock me-1"></i>Riêng tư</span>
+                                </div>
+                                <h5 class="card-title">Workshop Lập trình Web</h5>
+                                <p class="card-text small text-muted">Thực hành HTML, CSS, JavaScript</p>
+                                <div class="d-flex align-items-center mb-3">
+                                  <div class="avatar-group">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <span class="badge bg-secondary rounded-circle" style="margin-left: -10px; width: 30px; height: 30px; line-height: 22px;">+23</span>
+                                  </div>
+                                  <small class="ms-2 text-muted">25 người tham gia</small>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <small class="text-muted"><i class="fas fa-clock me-1"></i>30 phút</small>
+                                  <button class="btn btn-primary btn-sm">Tham gia</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Meeting Room 4 -->
+                          <div class="col-md-6 mb-4">
+                            <div class="card bg-dark text-white h-100">
+                              <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                  <span class="badge bg-success">Đang họp</span>
+                                  <span class="badge bg-info"><i class="fas fa-globe me-1"></i>Công khai</span>
+                                </div>
+                                <h5 class="card-title">Học nhóm Tiếng Anh</h5>
+                                <p class="card-text small text-muted">Luyện Speaking IELTS Part 2</p>
+                                <div class="d-flex align-items-center mb-3">
+                                  <div class="avatar-group">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <img src="../../assets/images/avatars/profile-image.png" class="rounded-circle border border-2 border-dark" width="30" style="margin-left: -10px;">
+                                    <span class="badge bg-secondary rounded-circle" style="margin-left: -10px; width: 30px; height: 30px; line-height: 22px;">+10</span>
+                                  </div>
+                                  <small class="ms-2 text-muted">12 người tham gia</small>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <small class="text-muted"><i class="fas fa-clock me-1"></i>55 phút</small>
+                                  <button class="btn btn-primary btn-sm">Tham gia</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Upcoming Meetings -->
+                  <div class="col-lg-4">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Lịch họp sắp tới</h5>
+                      </div>
+                      <div class="card-body p-0">
+                        <div class="p-3 border-bottom">
+                          <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                              <h6 class="mb-1">Họp Ban cán sự lớp</h6>
+                              <small class="text-muted"><i class="fas fa-calendar me-1"></i>Hôm nay, 16:00</small>
+                            </div>
+                            <span class="badge bg-warning text-dark">30 phút nữa</span>
+                          </div>
+                        </div>
+                        <div class="p-3 border-bottom">
+                          <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                              <h6 class="mb-1">Ôn tập Vật lý</h6>
+                              <small class="text-muted"><i class="fas fa-calendar me-1"></i>Hôm nay, 19:00</small>
+                            </div>
+                            <span class="badge bg-info">3 giờ nữa</span>
+                          </div>
+                        </div>
+                        <div class="p-3 border-bottom">
+                          <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                              <h6 class="mb-1">Review dự án nhóm</h6>
+                              <small class="text-muted"><i class="fas fa-calendar me-1"></i>Ngày mai, 09:00</small>
+                            </div>
+                            <span class="badge bg-secondary">Ngày mai</span>
+                          </div>
+                        </div>
+                        <div class="p-3 border-bottom">
+                          <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                              <h6 class="mb-1">Họp phụ huynh online</h6>
+                              <small class="text-muted"><i class="fas fa-calendar me-1"></i>05/12, 20:00</small>
+                            </div>
+                            <span class="badge bg-secondary">3 ngày</span>
+                          </div>
+                        </div>
+                        <div class="p-3">
+                          <a href="schedule-meeting.html" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-calendar-alt me-2"></i>Xem tất cả lịch họp
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="card mt-4">
+                      <div class="card-header">
+                        <h5 class="card-title mb-0">Thống kê tuần này</h5>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                          <span>Số cuộc họp</span>
+                          <strong>28</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                          <span>Tổng thời gian</span>
+                          <strong>45h 30p</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                          <span>Người tham gia</span>
+                          <strong>456</strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>Trung bình/cuộc</span>
+                          <strong>16 người</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- Create Meeting Modal -->
+        <div class="modal fade" id="createMeetingModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tạo phòng họp mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Tên phòng họp</label>
+                    <input type="text" class="form-control" placeholder="Nhập tên phòng họp">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Loại phòng</label>
+                    <select class="form-select">
+                      <option value="public">Công khai</option>
+                      <option value="private">Riêng tư</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Mô tả</label>
+                  <textarea class="form-control" rows="2" placeholder="Mô tả nội dung cuộc họp"></textarea>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Mật khẩu (tùy chọn)</label>
+                    <input type="password" class="form-control" placeholder="Để trống nếu không cần">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Số người tối đa</label>
+                    <select class="form-select">
+                      <option value="10">10 người</option>
+                      <option value="25">25 người</option>
+                      <option value="50" selected>50 người</option>
+                      <option value="100">100 người</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-check form-switch mb-3">
+                  <input class="form-check-input" type="checkbox" id="waitingRoom">
+                  <label class="form-check-label" for="waitingRoom">Bật phòng chờ</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="recording">
+                  <label class="form-check-label" for="recording">Cho phép ghi hình</label>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary">Tạo và bắt đầu họp</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Join Meeting Modal -->
+        <div class="modal fade" id="joinMeetingModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Tham gia phòng họp</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label class="form-label">Mã phòng họp</label>
+                  <input type="text" class="form-control" placeholder="Nhập mã phòng họp">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Mật khẩu (nếu có)</label>
+                  <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Tên hiển thị</label>
+                  <input type="text" class="form-control" placeholder="Tên của bạn trong cuộc họp">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-success">Tham gia</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Javascripts -->
+        <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+        <script src="../../assets/plugins/pace/pace.min.js"></script>
+        <script src="../../assets/js/main.min.js"></script>
+    </body>
+</html>
