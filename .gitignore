@@ -1,0 +1,75 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+bower_components/
+vendor/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Build Output
+dist/
+build/
+*.min.js.map
+*.min.css.map
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Sensitive Information
+config/database.php
+config/config.local.php
+*.key
+*.pem
+*.p12
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# PHP
+composer.phar
+composer.lock
+phpunit.phar
